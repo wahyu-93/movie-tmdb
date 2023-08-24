@@ -8,9 +8,10 @@
     <title>Bee-Cinema|Watch Movie</title>
 </head>
 <body>
-    {{-- header --}}
-    @include('page/header')
-
+    <div class="w-full h-auto min-h-screen flex flex-col">
+        @include('page/header')
+    </div>
+    
     @yield('content')
     
 </body>
