@@ -59,4 +59,13 @@
             </svg>
         </button>
     </div>
+
+    {{-- indikator --}}
+    <div class="absolute w-full bottom-0 mb-8">
+        <div class="w-full flex flex-row items-center justify-center">
+            <div class="w-2.5 h-2.5 rounded-full bg-white mx-1 cursor-pointer dot"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-blue-300 mx-1 cursor-pointer dot"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-white mx-1 cursor-pointer dot"></div>
+        </div>
+    </div>
 </div>
