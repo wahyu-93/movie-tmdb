@@ -17,27 +17,29 @@
 {{-- banner --}}
 <div class="w-full h-[512px] bg-black relative flex flex-col">
     {{-- banner data --}}
-    <div class="flex flex-row items-center w-full h-full relative slide">
-        <img src="https://via.placeholder.com/960x540" class="w-full h-full absolute object-cover">
-        <div class="w-full h-full bg-black bg-opacity-40 absolute"></div>
 
-        <div class="w-10/12 flex flex-col ml-28 z-10">
-            <span class="text-4xl font-bold text-white font-inter">
-                Judul
-            </span>
+    @foreach ($bannerArray as $banner)    
+        <div class="flex flex-row items-center w-full h-full relative slide">
+            <img src="https://via.placeholder.com/960x540" class="w-full h-full absolute object-cover">
+            <div class="w-full h-full bg-black bg-opacity-40 absolute"></div>
 
-            <span class="font-inter text-xl text-white w-1/2 line-clamp-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem debitis assumenda voluptatum iste alias nam adipisci quibusdam beatae mollitia accusantium?</span>
-            
-            <a href="" class="w-fit text-white bg-blue-300 mt-5 pl-2 pr-4 py-2 font-inter text-sm flex flex-row items-center rounded-full hover:drop-shadow-lg duration-200">
-                <svg fill="#000000" height="16" width="16" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 210 210" xml:space="preserve">
-                    <path d="M179.07,105L30.93,210V0L179.07,105z" class="fill-white"/>
-                </svg>
-            
-                <span class="font-inter mx-1">Detail</span>
-            </a>
+            <div class="w-10/12 flex flex-col ml-28 z-10">
+                <span class="text-4xl font-bold text-white font-inter">
+                    {{ $banner->title }}
+                </span>
+
+                <span class="font-inter text-xl text-white w-1/2 line-clamp-2">{{ $banner->overview }}</span>
+                
+                <a href="" class="w-fit text-white bg-blue-300 mt-5 pl-2 pr-4 py-2 font-inter text-sm flex flex-row items-center rounded-full hover:drop-shadow-lg duration-200">
+                    <svg fill="#000000" height="16" width="16" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 210 210" xml:space="preserve">
+                        <path d="M179.07,105L30.93,210V0L179.07,105z" class="fill-white"/>
+                    </svg>
+                
+                    <span class="font-inter mx-1">Detail</span>
+                </a>
+            </div>
         </div>
-    </div>
-
+    @endforeach
     {{-- prev button --}}
     <div class="absolute left-0 w-1/12 flex justify-center top-1/2 -translate-y-1/2 ">
         <button class="bg-white p-3 rounded-full opacity-20 hover:opacity-100 duration-200">
