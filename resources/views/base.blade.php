@@ -13,6 +13,37 @@
     </div>
     
     @yield('content')
+
+    <script>
+        // akif banner
+        let slideIndex = 4
+        showSlide(slideIndex);
+
+        function showSlide(position)
+        {
+            let index;
+            const slides = document.getElementsByClassName('slide')
+
+            if(position > slides.length){
+                slideIndex = 1;
+            };
+
+            if(position < slides.length){
+                slideIndex = slides.length;
+            }
+
+            console.log(position)
+
+            for (index=0; index <= slides.length; index++){
+                slides[index].classList.addList('hidden');
+            }
+
+
+        }
+
+
+        
+    </script>
     
 </body>
 </html>

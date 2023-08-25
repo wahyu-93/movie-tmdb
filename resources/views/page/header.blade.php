@@ -20,7 +20,7 @@
 
     @foreach ($bannerArray as $banner)    
         <div class="flex flex-row items-center w-full h-full relative slide">
-            <img src="https://via.placeholder.com/960x540" class="w-full h-full absolute object-cover">
+            <img src="{{ $imageBaseURL . '/original' . $banner->backdrop_path }}" class="w-full h-full absolute object-cover">
             <div class="w-full h-full bg-black bg-opacity-40 absolute"></div>
 
             <div class="w-10/12 flex flex-col ml-28 z-10">
