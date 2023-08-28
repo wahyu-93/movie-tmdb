@@ -42,7 +42,7 @@
     @endforeach
     {{-- prev button --}}
     <div class="absolute left-0 w-1/12 flex justify-center top-1/2 -translate-y-1/2 ">
-        <button class="bg-white p-3 rounded-full opacity-20 hover:opacity-100 duration-200">
+        <button class="bg-white p-3 rounded-full opacity-20 hover:opacity-100 duration-200" onclick="moveBack(-1)">
             <svg fill="#000000" height="16" width="16" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
                 <path id="XMLID_92_" d="M111.213,165.004L250.607,25.607c5.858-5.858,5.858-15.355,0-21.213c-5.858-5.858-15.355-5.858-21.213,0.001
                     l-150,150.004C76.58,157.211,75,161.026,75,165.004c0,3.979,1.581,7.794,4.394,10.607l150,149.996
@@ -53,7 +53,7 @@
 
     {{-- next button --}}
     <div class="absolute right-0 w-1/12 flex justify-center top-1/2 -translate-y-1/2">
-        <button class="bg-white p-3 rounded-full opacity-20 hover:opacity-100 duration-200 rotate-180">
+        <button class="bg-white p-3 rounded-full opacity-20 hover:opacity-100 duration-200 rotate-180" onclick="moveStep(1)">
             <svg fill="#000000" height="16" width="16" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
                 <path id="XMLID_92_" d="M111.213,165.004L250.607,25.607c5.858-5.858,5.858-15.355,0-21.213c-5.858-5.858-15.355-5.858-21.213,0.001
                     l-150,150.004C76.58,157.211,75,161.026,75,165.004c0,3.979,1.581,7.794,4.394,10.607l150,149.996
@@ -71,3 +71,46 @@
         </div>
     </div>
 </div>
+
+@push('script')
+    <script>
+        // akif banner
+        let slideIndex = 1
+        showSlide(slideIndex);
+
+        function showSlide(position)
+        {
+            let index;
+            const slides = document.getElementsByClassName('slide')
+            const dots = document.getElementsByClassName('dot')
+
+            if(position > slides.length){
+               slideIndex = 1;
+            };
+
+            if(position < 1 ){
+                slideIndex = slides.length;
+            }
+
+            for (index=0; index < slides.length; index++){
+                slides[index].classList.add('hidden');
+                dots[index].classList.add('bg-white')
+            }
+
+            slides[slideIndex - 1].classList.remove('hidden');
+            dots[slideIndex - 1].classList.remove('bg-white');
+            dots[slideIndex - 1].classList.add('bg-blue-300')
+        }
+
+        function moveStep(position)
+        {
+            showSlide(slideIndex += position)
+        }
+
+        function moveBack(position)
+        {
+            showSlide(slideIndex -= position)
+        }
+        
+    </script>
+@endpush
