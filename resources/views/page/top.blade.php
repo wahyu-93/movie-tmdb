@@ -21,7 +21,7 @@
                         </svg>
                     </span>
 
-                    <span class="font-inter text-sm ml-1">{{ $movie->vote_average * 10 }}</span>
+                    <span class="font-inter text-sm ml-1">{{ $movie->vote_average * 10 }}%</span>
                 </div>
             </div>
         </a>
@@ -51,7 +51,7 @@
                         </svg>
                     </span>
 
-                    <span class="font-inter text-sm ml-1">{{ $tv->vote_average * 10 }}</span>
+                    <span class="font-inter text-sm ml-1">{{ $tv->vote_average * 10 }}%</span>
                 </div>
             </div>
         </a>

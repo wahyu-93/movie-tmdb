@@ -23,8 +23,8 @@
     </div>
 
     {{-- movie content --}}
-    <div class="pl-28 pr-10">
-        <div class="grid grid-cols-3 md:grid-cols-5 gap-5 pb-5">
+    <div class="pl-28 pr-10 relative">
+        <div class="block grid grid-cols-3 md:grid-cols-5 gap-5 pb-5">
             @foreach ($movies as $movie)
                 <a href="tv/{{ $movie->id }}" class="group">
                     <div class="min-w-[232px] min-h-[428px] bg-white drop-shadow-[0_0px_8px_rgba(0,0,0,0.25)] group-hover:drop-shadow-[0_0px_8px_rgba(0,0,0,0.5)] rounded-[32px] p-5 flex flex-col mr-8 duration-100">
@@ -42,12 +42,34 @@
                                 </svg>
                             </span>
         
-                            <span class="font-inter text-sm ml-1">{{ $movie->vote_average * 10 }}</span>
+                            <span class="font-inter text-sm ml-1">{{ $movie->vote_average * 10 }}%</span>
                         </div>
                     </div>
                 </a>
             @endforeach
             
         </div>
+        
+        {{-- autoload --}}
+        <div id="autoLoad" class="mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; display: block; shape-rendering: auto;" width="50px" height="50px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                <path d="M10 50A40 40 0 0 0 90 50A40 42 0 0 1 10 50" fill="#93dbe9" stroke="none">
+                  <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 51;360 50 51"></animateTransform>
+                </path>
+            </svg>
+        </div>
+
+
+        {{-- loada more --}}
+        <div class="w-full pr-8">
+            <button class="w-full bg-blue-400 text-white p-4 text-xl rounded-xl mb-5 text-center hover:bg-blue-300" onclick="loadMore()">Load More</button>
+        </div>
+
+
+        {{-- notifikasi --}}
+        <div class="bg-red-700 fixed z-10 top-0 mt-4 right-0 mr-[70px] w-[400px] p-4 rounded-lg" id="notif">
+            <span class="font-inter font-xl text-white text-center" id="notifMessage">Http Error 404</span>
+        </div>
     </div>
+
 @endsection
