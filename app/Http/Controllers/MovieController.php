@@ -97,6 +97,6 @@ class MovieController extends Controller
             };
         };
    
-        return view('movies', compact('movies', 'imageBaseURL'));
+        return view('movies', compact('movies', 'imageBaseURL', 'baseURL', 'apiKey'));
     }
 }
