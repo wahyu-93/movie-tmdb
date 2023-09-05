@@ -73,4 +73,9 @@ class MovieController extends Controller
 
         return view('home',compact('bannerArray', 'imageBaseURL', 'topMovies', 'topTv'));
     }
+
+    public function movies()
+    {
+        return view('movies');
+    }
 }

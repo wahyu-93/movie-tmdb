@@ -5,7 +5,7 @@
             <span class="font-inter font-sm text-white mt-4 ml-28 w-1/2">Kami Menyediakan review film dan TV Series </span>
             <span class="font-inter font-sm text-white ml-28 w-1/2">yang bisa jadi acuan tontonanmu</span>
             <span class="font-inter font-sm text-white ml-28 w-1/2">#BetterMovieBetterLife</span>
-            <span class="font-inter font-sm text-white mt-4 ml-28">&copy; {{ date_format(new DateTime(now()), 'Y') }} BeeCinema</span>
+            <span class="font-inter font-sm text-white mt-4 ml-28">&copy; {{ date_format(new DateTime(now()), 'Y') }} BeeCinemation</span>
         </div>
         <div class="w-3/12 pyflex flex-col">
             <div class="font-inter text-white text-xl font-bold">Website</div>

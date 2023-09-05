@@ -1,6 +1,6 @@
 @extends('base')
 
-@section('title', 'Bee-Cinema | Watch Movie')
+@section('title', 'BeeCinemation | Watch Movie')
 
 @section('content')
     @include('page/banner')

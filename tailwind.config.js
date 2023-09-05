@@ -10,6 +10,7 @@ module.exports = {
         fontFamily: {
             inter: ["Inter"],
             quicksand: ["Quicksand"],
+            caveat: ["Caveat"],
         },
     },
     plugins: [],

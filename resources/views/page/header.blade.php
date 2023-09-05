@@ -1,10 +1,10 @@
 <div class="w-full bg-white drop-shadow-lg h-[96px] flex flex-row items-center">
     <div class="w-1/3 pl-5">
-        <a href="" class="uppercase text-base text-black hover:text-blue-300 duration-200 font-inter mx-5">Movie</a>
+        <a href="{{ route('movies') }}" class="uppercase text-base text-black hover:text-blue-300 duration-200 font-inter mx-5">Movie</a>
         <a href="" class="uppercase text-base text-black hover:text-blue-300 duration-200 font-inter">Tv Show</a>
     </div>
     
-    <div class="w-1/3 flex justify-center text-5xl font-bold hover:text-blue-300 duration-200 cursor-pointer font-quicksand">BeeCinema</div>
+    <div class="w-1/3 flex justify-center text-5xl font-bold hover:text-blue-300 duration-200 cursor-pointer font-caveat">BeeCinemation</div>
     <div class="w-1/3  flex justify-end pr-10">
         <a href="" class="group">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
