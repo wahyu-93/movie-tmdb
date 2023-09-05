@@ -7,7 +7,7 @@
     <div class="py-5 flex flex-row items-center">
         <span class="font-bold font-inter text-xl ml-28 mr-4">Sort</span>
         <div class="flex relative items-center">
-            <select name="sort" id="sort" class="appearance-none bg-white drop-shadow-[0_0px_8px_rgba(0,0,0,0.25)] p-3 rounded-lg focus:outline-none pr-8">
+            <select name="sort" id="sort" class="appearance-none bg-white drop-shadow-[0_0px_8px_rgba(0,0,0,0.25)] p-3 rounded-lg focus:outline-none pr-8" onchange="sort(this)">
                 <option value="popularity.desc">Popularity (Descending)</option>
                 <option value="popularity.asc">Popularity (Ascending)</option>
                 <option value="vote_average.desc">Top Rated (Descending)</option>
@@ -61,7 +61,7 @@
 
 
         {{-- loada more --}}
-        <div class="w-full pr-8">
+        <div class="w-full pr-8" id="loadMore">
             <button class="w-full bg-blue-400 text-white p-4 text-xl rounded-xl mb-5 text-center hover:bg-blue-300" onclick="loadMore()">Load More</button>
         </div>
 
@@ -75,6 +75,8 @@
         <script>
             const autoLoad = document.getElementById('autoLoad')
             const notifikasi = document.getElementById('notif')
+            const loadMoreDiv = document.getElementById('loadMore')
+
             let dataWrapper = document.getElementById('dataWrapper')
             let sort_by = 'popularity.desc'
             let page = 1
@@ -129,6 +131,20 @@
                     autoLoad.style.display = 'none'
                     dataWrapper.innerHTML += htmlData.join("")
                 }, 500);
+            }
+
+            function sort(component)
+            {
+                sort_by = component
+
+                dataWrapper.innerHTML = ""
+                autoLoad.style.display = 'block'
+                // loadMoreDiv.style.display = 'none'
+
+                setTimeout(() => {
+                    autoLoad.style.display = 'none'
+                    loadMore()
+                }, 1000);
             }
         </script>
     @endpush
