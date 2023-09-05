@@ -1,7 +1,7 @@
 <div class="bg-blue-800 w-full h-auto">
     <div class="flex md:flex-row justify-center py-10 flex-col">
         <div class="w-6/12 flex flex-col">
-            <div class="ml-28 text-4xl font-quicksand font-bold text-white">BeeCinema</div>
+            <div class="ml-28 text-4xl font-quicksand font-bold text-white">BeeCinemation</div>
             <span class="font-inter font-sm text-white mt-4 ml-28 w-1/2">Kami Menyediakan review film dan TV Series </span>
             <span class="font-inter font-sm text-white ml-28 w-1/2">yang bisa jadi acuan tontonanmu</span>
             <span class="font-inter font-sm text-white ml-28 w-1/2">#BetterMovieBetterLife</span>

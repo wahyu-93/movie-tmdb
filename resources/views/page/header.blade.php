@@ -1,11 +1,11 @@
 <div class="w-full bg-white drop-shadow-lg h-[96px] flex flex-row items-center">
-    <div class="w-1/3 pl-5">
-        <a href="{{ route('movies') }}" class="uppercase text-base text-black hover:text-blue-300 duration-200 font-inter mx-5">Movie</a>
-        <a href="" class="uppercase text-base text-black hover:text-blue-300 duration-200 font-inter">Tv Show</a>
-    </div>
     
     <div class="w-1/3 flex justify-center text-5xl font-bold hover:text-blue-300 duration-200 cursor-pointer font-caveat">
         <a href="{{ route('home') }}">BeeCinemation</a>
+    </div>
+    <div class="w-1/3 pl-5 text-center">
+        <a href="{{ route('movies') }}" class="uppercase text-base text-black hover:text-blue-300 duration-200 font-inter mx-5">Movie</a>
+        <a href="" class="uppercase text-base text-black hover:text-blue-300 duration-200 font-inter">Tv Show</a>
     </div>
     <div class="w-1/3  flex justify-end pr-10">
         <a href="" class="group">
