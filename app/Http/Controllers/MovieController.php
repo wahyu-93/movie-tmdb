@@ -76,6 +76,27 @@ class MovieController extends Controller
 
     public function movies()
     {
-        return view('movies');
+        $baseURL = config('services.tmdb.TMDB_BASE_URL');
+        $imageBaseURL = config('services.tmdb.TMDB_IMAGE_BASE_URL');
+        $apiKey = config('services.tmdb.TMDB_API_KEY');
+        
+        $url = $baseURL . '/discover/movie/';
+        $movieResponse = Http::get($url, [
+            'api_key' => $apiKey,
+            'page'  => 1,
+            'sort_by'=> 'popularity.desc',
+            'vote_count.gte' => 100
+        ]);
+
+        $movies = [];
+
+        if($movieResponse->successful()){
+            $movieArray = $movieResponse->object()->results;            
+            foreach($movieArray as $item){
+                array_push($movies,$item);
+            };
+        };
+   
+        return view('movies', compact('movies', 'imageBaseURL'));
     }
 }
