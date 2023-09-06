@@ -90,7 +90,7 @@
             {
                 autoLoad.style.display = 'block'
 
-                $url = `{{ $baseURL }}/discover/movie?sort_by=${sort_by}&page=${++page}&vote_count.gte=${vote_count_gte}&api_key=${apiKey}`
+                $url = `{{ $baseURL }}/discover/tv?sort_by=${sort_by}&page=${++page}&vote_count.gte=${vote_count_gte}&api_key=${apiKey}`
                 const response = await fetch($url)
                 const data = await response.json()
                 
@@ -105,6 +105,7 @@
                 htmlData = [];
                 data.results.forEach(item => {
                     let tanggal = new Date(item.first_air_date)
+                    
                     htmlData.push(`<a href="tv/${item.id}" class="group">
                     <div class="min-w-[232px] min-h-[428px] bg-white drop-shadow-[0_0px_8px_rgba(0,0,0,0.25)] group-hover:drop-shadow-[0_0px_8px_rgba(0,0,0,0.5)] rounded-[32px] p-5 flex flex-col mr-8 duration-100">
                         <div class="overflow-hidden rounded-[32px]">
