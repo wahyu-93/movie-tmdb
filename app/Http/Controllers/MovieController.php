@@ -125,4 +125,13 @@ class MovieController extends Controller
    
         return view('tv', compact('tvs', 'imageBaseURL', 'baseURL', 'apiKey'));       
     }
+
+    public function search()
+    {
+        $baseURL = config('services.tmdb.TMDB_BASE_URL');
+        $imageBaseURL = config('services.tmdb.TMDB_IMAGE_BASE_URL');
+        $apiKey = config('services.tmdb.TMDB_API_KEY');
+        
+        return view('search', compact('baseURL', 'imageBaseURL', 'apiKey'));
+    }
 }

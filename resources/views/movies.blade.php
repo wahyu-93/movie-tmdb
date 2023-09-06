@@ -90,8 +90,8 @@
             {
                 autoLoad.style.display = 'block'
 
-                $url = `{{ $baseURL }}/discover/movie?sort_by=${sort_by}&page=${++page}&vote_count.gte=${vote_count_gte}&api_key=${apiKey}`
-                const response = await fetch($url)
+                url = `{{ $baseURL }}/discover/movie?sort_by=${sort_by}&page=${++page}&vote_count.gte=${vote_count_gte}&api_key=${apiKey}`
+                const response = await fetch(url)
                 const data = await response.json()
                 
                 if(!response.ok){
