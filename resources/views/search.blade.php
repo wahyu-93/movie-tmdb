@@ -59,6 +59,10 @@
             autoLoad.style.display = 'block'
             dataWrapper.innerHTML = ""
 
+            let tanggal
+            let title
+            let id
+
             url = `{{ $baseURL }}/search/multi?query=${search.value}&page=1&api_key=${apiKey}`
             const response = await fetch(url)
             const data = await response.json()
@@ -77,18 +81,31 @@
                     notifikasi.style.display = 'none'
                 }, 3000);
             }
+
+
         
             // get data success
             htmlData = [];
             data.results.forEach(item => {
-                let tanggal = new Date(item.release_date)
-                htmlData.push(`<a href="tv/${item.id}" class="group">
+                if (item.media_type == 'tv'){
+                    id = 'tv/' + item.id
+                    tanggal = new Date(item.first_air_date)
+                    title = item.name
+
+                }
+                else {
+                    id = 'movie/' + item.id
+                    tanggal = new Date(item.release_date)
+                    title = item.title
+                }
+
+                htmlData.push(`<a href="${id}" class="group">
                 <div class="min-w-[232px] min-h-[428px] bg-white drop-shadow-[0_0px_8px_rgba(0,0,0,0.25)] group-hover:drop-shadow-[0_0px_8px_rgba(0,0,0,0.5)] rounded-[32px] p-5 flex flex-col mr-8 duration-100">
                     <div class="overflow-hidden rounded-[32px]">
                         <img src="{{ $imageBaseURL }}/w500${item.poster_path}" class="w-full h-[300px] group-hover:scale-125 duration-200">
                     </div>
     
-                    <span class="mt-4 line-clamp-1 group-hover:line-clamp-none font-inter font-xl">${item.title}</span>
+                    <span class="mt-4 line-clamp-1 group-hover:line-clamp-none font-inter font-xl">${title}</span>
                     <span class="font-inter font-sm">${tanggal.getFullYear()}</span>
     
                     <div class="flex flex-row mt-1 items-center">
