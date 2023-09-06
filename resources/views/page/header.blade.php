@@ -5,7 +5,7 @@
     </div>
     <div class="w-1/3 pl-5 text-center">
         <a href="{{ route('movies') }}" class="uppercase text-base text-black hover:text-blue-300 duration-200 font-inter mx-5">Movie</a>
-        <a href="" class="uppercase text-base text-black hover:text-blue-300 duration-200 font-inter">Tv Show</a>
+        <a href="{{ route('tv') }}" class="uppercase text-base text-black hover:text-blue-300 duration-200 font-inter">Tv Show</a>
     </div>
     <div class="w-1/3  flex justify-end pr-10">
         <a href="" class="group">
