@@ -134,4 +134,32 @@ class MovieController extends Controller
         
         return view('search', compact('baseURL', 'imageBaseURL', 'apiKey'));
     }
+
+    public function detailMovie($id)
+    {
+        $baseURL = config('services.tmdb.TMDB_BASE_URL');
+        $imageBaseURL = config('services.tmdb.TMDB_IMAGE_BASE_URL');
+        $apiKey = config('services.tmdb.TMDB_API_KEY');
+        
+        $movieDetail = [];
+        $url = $baseURL.'/movie/'.$id;
+
+        $response = Http::get($url,[
+            'api_key'   => $apiKey,
+            'append_to_response' => 'videos'
+        ]);
+        
+        if($response->successful()){
+            $movieDetail = $response->object();
+        };
+
+        return view('detail', compact('movieDetail', 'imageBaseURL'));
+    }
+
+    public function detailTv($id)
+    {
+        dd('tv');
+    }
+
+
 }

@@ -525,6 +525,9 @@ video {
 .z-10{
   z-index: 10;
 }
+.z-20{
+  z-index: 20;
+}
 .mx-1{
   margin-left: 0.25rem;
   margin-right: 0.25rem;
@@ -658,6 +661,9 @@ video {
 }
 .h-full{
   height: 100%;
+}
+.h-screen{
+  height: 100vh;
 }
 .min-h-\[428px\]{
   min-height: 428px;
@@ -818,8 +824,27 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
+.bg-blue-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 234 254 / var(--tw-bg-opacity));
+}
 .bg-opacity-40{
   --tw-bg-opacity: 0.4;
+}
+.bg-opacity-100{
+  --tw-bg-opacity: 1;
+}
+.bg-opacity-50{
+  --tw-bg-opacity: 0.5;
+}
+.bg-opacity-60{
+  --tw-bg-opacity: 0.6;
+}
+.bg-opacity-10{
+  --tw-bg-opacity: 0.1;
+}
+.bg-opacity-5{
+  --tw-bg-opacity: 0.05;
 }
 .fill-black{
   fill: #000;
@@ -997,6 +1022,9 @@ video {
 .opacity-20{
   opacity: 0.2;
 }
+.opacity-100{
+  opacity: 1;
+}
 .shadow{
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
@@ -1162,6 +1190,11 @@ video {
 
   .lg\:w-80{
     width: 20rem;
+  }
+
+  .lg\:object-fill{
+    -o-object-fit: fill;
+       object-fit: fill;
   }
 
   .lg\:px-8{
