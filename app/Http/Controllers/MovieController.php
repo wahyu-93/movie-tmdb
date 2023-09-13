@@ -136,29 +136,47 @@ class MovieController extends Controller
     }
 
     public function detailMovie($id)
+    {   
+        $baseURL = config('services.tmdb.TMDB_BASE_URL');
+        $imageBaseURL = config('services.tmdb.TMDB_IMAGE_BASE_URL');
+        $apiKey = config('services.tmdb.TMDB_API_KEY');
+
+        $url = $baseURL . '/movie/' . $id;
+
+        $response = Http::get($url, [
+            'api_key' => $apiKey,
+            'append_to_response' => 'videos'
+        ]);
+
+        $detailMovie = '';
+
+        if($response->successful()){
+            $detailMovie = $response->object();
+        };
+ 
+        return view('detailMovie', compact('detailMovie','imageBaseURL'));
+    }
+
+    public function detailTv($id)
     {
         $baseURL = config('services.tmdb.TMDB_BASE_URL');
         $imageBaseURL = config('services.tmdb.TMDB_IMAGE_BASE_URL');
         $apiKey = config('services.tmdb.TMDB_API_KEY');
         
-        $movieDetail = [];
-        $url = $baseURL.'/movie/'.$id;
+        $url = $baseURL . '/tv/' . $id;
 
-        $response = Http::get($url,[
-            'api_key'   => $apiKey,
+        $response = Http::get($url, [
+            'api_key' => $apiKey,
             'append_to_response' => 'videos'
         ]);
-        
+
+        $detailTv = [];
+
         if($response->successful()){
-            $movieDetail = $response->object();
+            $detailTv = $response->object();
         };
-
-        return view('detail', compact('movieDetail', 'imageBaseURL'));
-    }
-
-    public function detailTv($id)
-    {
-        dd('tv');
+        // dd($detailTv);
+        return view('detailTv', compact('detailTv','imageBaseURL'));
     }
 
 

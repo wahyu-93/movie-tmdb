@@ -494,6 +494,9 @@ video {
 .pointer-events-none{
   pointer-events: none;
 }
+.visible{
+  visibility: visible;
+}
 .fixed{
   position: fixed;
 }
@@ -524,9 +527,6 @@ video {
 }
 .z-10{
   z-index: 10;
-}
-.z-20{
-  z-index: 20;
 }
 .mx-1{
   margin-left: 0.25rem;
@@ -575,6 +575,9 @@ video {
 .ml-4{
   margin-left: 1rem;
 }
+.ml-auto{
+  margin-left: auto;
+}
 .mr-2{
   margin-right: 0.5rem;
 }
@@ -620,6 +623,12 @@ video {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
+.line-clamp-5{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
 .block{
   display: block;
 }
@@ -640,6 +649,9 @@ video {
 }
 .h-2\.5{
   height: 0.625rem;
+}
+.h-20{
+  height: 5rem;
 }
 .h-5{
   height: 1.25rem;
@@ -689,6 +701,9 @@ video {
 .w-2\.5{
   width: 0.625rem;
 }
+.w-20{
+  width: 5rem;
+}
 .w-3\/12{
   width: 25%;
 }
@@ -717,11 +732,18 @@ video {
 .min-w-\[232px\]{
   min-width: 232px;
 }
+.max-w-3xl{
+  max-width: 48rem;
+}
 .max-w-6xl{
   max-width: 72rem;
 }
 .-translate-y-1\/2{
   --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.-rotate-90{
+  --tw-rotate: -90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .rotate-180{
@@ -789,12 +811,19 @@ video {
   border-top-right-radius: 0.75rem;
   border-bottom-right-radius: 0.75rem;
 }
+.border{
+  border-width: 1px;
+}
 .border-t{
   border-top-width: 1px;
 }
 .border-gray-200{
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+.border-white{
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 .bg-black{
   --tw-bg-opacity: 1;
@@ -816,6 +845,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
+.bg-red-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
+}
 .bg-red-700{
   --tw-bg-opacity: 1;
   background-color: rgb(185 28 28 / var(--tw-bg-opacity));
@@ -824,27 +857,11 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.bg-blue-100{
-  --tw-bg-opacity: 1;
-  background-color: rgb(219 234 254 / var(--tw-bg-opacity));
-}
 .bg-opacity-40{
   --tw-bg-opacity: 0.4;
 }
-.bg-opacity-100{
-  --tw-bg-opacity: 1;
-}
-.bg-opacity-50{
-  --tw-bg-opacity: 0.5;
-}
 .bg-opacity-60{
   --tw-bg-opacity: 0.6;
-}
-.bg-opacity-10{
-  --tw-bg-opacity: 0.1;
-}
-.bg-opacity-5{
-  --tw-bg-opacity: 0.05;
 }
 .fill-black{
   fill: #000;
@@ -859,6 +876,9 @@ video {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.p-20{
+  padding: 5rem;
+}
 .p-3{
   padding: 0.75rem;
 }
@@ -870,6 +890,14 @@ video {
 }
 .p-6{
   padding: 1.5rem;
+}
+.px-10{
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.px-20{
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 .px-6{
   padding-left: 1.5rem;
@@ -906,14 +934,23 @@ video {
 .pl-28{
   padding-left: 7rem;
 }
+.pl-4{
+  padding-left: 1rem;
+}
 .pl-5{
   padding-left: 1.25rem;
+}
+.pl-6{
+  padding-left: 1.5rem;
 }
 .pr-10{
   padding-right: 2.5rem;
 }
 .pr-4{
   padding-right: 1rem;
+}
+.pr-6{
+  padding-right: 1.5rem;
 }
 .pr-8{
   padding-right: 2rem;
@@ -936,12 +973,20 @@ video {
 .font-quicksand{
   font-family: Quicksand;
 }
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
 .text-4xl{
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
 .text-5xl{
   font-size: 3rem;
+  line-height: 1;
+}
+.text-6xl{
+  font-size: 3.75rem;
   line-height: 1;
 }
 .text-base{
@@ -968,6 +1013,9 @@ video {
 }
 .uppercase{
   text-transform: uppercase;
+}
+.italic{
+  font-style: italic;
 }
 .leading-7{
   line-height: 1.75rem;
@@ -1021,9 +1069,6 @@ video {
 }
 .opacity-20{
   opacity: 0.2;
-}
-.opacity-100{
-  opacity: 1;
 }
 .shadow{
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
